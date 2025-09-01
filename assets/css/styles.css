@@ -26,3 +26,29 @@ a{color:var(--pri);text-decoration:none} a:hover{text-decoration:underline}
 .map-dummy{background:#e2e8f0;border:1px dashed #94a3b8;height:220px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#475569}
 .site-footer{border-top:1px solid var(--line);padding:20px 0;margin-top:32px;background:#fff;text-align:center}
 .note{color:var(--muted)}
+/* ヒーロー背景 */
+.hero-water {
+  position: relative;
+  background: url("img/water-hero.jpg") center/cover no-repeat;
+  min-height: 360px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 64px 16px;
+}
+.hero-water::after{
+  /* 文字を読みやすくする半透明オーバーレイ */
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,.15));
+}
+.hero-water .hero-inner{
+  position: relative; /* オーバーレイの上に出す */
+  text-align:center; color:#fff;
+}
+.hero-water h1{
+  font-weight:900; font-size:40px; line-height:1.2; margin:0 0 .4rem;
+  text-shadow: 0 2px 14px rgba(0,0,0,.35);
+}
+.hero-water .lead{opacity:.95}
+@media (min-width: 992px){
+  .hero-water{min-height: 520px}
+  .hero-water h1{font-size:56px}
+}
