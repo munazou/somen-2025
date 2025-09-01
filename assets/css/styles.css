@@ -52,3 +52,16 @@ a{color:var(--pri);text-decoration:none} a:hover{text-decoration:underline}
   .hero-water{min-height: 520px}
   .hero-water h1{font-size:56px}
 }
+/* ロゴを小さめに表示 */
+.brand-logo {
+  height: 32px;   /* 小さめロゴ */
+  width: auto;
+  display: block;
+}
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
