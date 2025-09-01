@@ -1,1 +1,49 @@
-# marathon_copy
+:root{
+  --bg:#f7fafc; --ink:#0f172a; --muted:#475569;
+  --line:#e5e7eb; --pri:#0ea5e9; --pri-d:#0284c7; --card:#fff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans JP",Roboto,Arial}
+a{color:var(--pri);text-decoration:none} a:hover{text-decoration:underline}
+.container{max-width:1080px;margin:0 auto;padding:16px 20px}
+.flex{display:flex}.between{justify-content:space-between}.center{align-items:center}
+.site-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.brand{font-weight:800}
+.nav{display:flex;gap:16px}
+.nav .btn{padding:8px 12px;border-radius:10px;border:1px solid var(--pri)}
+.btn{display:inline-block;padding:12px 16px;border-radius:12px;font-weight:700}
+.btn-primary{background:var(--pri);color:#fff;border:none}.btn-primary:hover{background:var(--pri-d)}
+.hero{background:linear-gradient(120deg,#e0f2fe,#ccfbf1);border-bottom:1px solid var(--line);padding:56px 0}
+.hero h1{font-size:40px;margin:0 0 8px}.hero .lead{color:var(--muted);margin:0 0 16px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.meta{list-style:none;padding-left:0;margin:8px 0;color:var(--muted)}
+.meta li{margin:6px 0}
+.timeline{list-style:none;padding-left:0}
+.timeline li{border-left:3px solid var(--pri);padding:8px 12px;margin:10px 0;background:#f0f9ff;border-radius:8px}
+.timeline li span{display:inline-block;width:70px;font-weight:700;color:#0369a1}
+.map-dummy{background:#e2e8f0;border:1px dashed #94a3b8;height:220px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#475569}
+.site-footer{border-top:1px solid var(--line);padding:20px 0;margin-top:32px;background:#fff;text-align:center}
+.note{color:var(--muted)}
+<link rel="stylesheet" href="assets/css/styles.css" />
+<header class="site-header">
+  <div class="container flex between center">
+    <a class="brand" href="#">Nagashi Somen 2025</a>
+    <nav class="nav">
+      <a href="#about">概要</a>
+      <a href="#schedule">当日の流れ</a>
+      <a href="#bring">持ち物</a>
+      <a href="#access">アクセス</a>
+      <a class="btn" href="#rsvp">申込</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>流しそうめん大会 2025</h1>
+    <p class="lead">2025年9月13日（土）｜前橋 Munakata House</p>
+    <a class="btn btn-primary" href="#rsvp">参加申込する</a>
+  </div>
+</section>
