@@ -19,8 +19,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Rampart+One&display=swap" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- あなたのカスタムCSS -->
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    body{font-family: system-ui, -apple-system, "Noto Sans JP", "Yusei Magic", Roboto, Arial;}
+    header.site-header .brand-logo{height:40px}
+    .hero{background:linear-gradient(120deg,#e0f2fe,#ccfbf1);padding:72px 0;border-bottom:1px solid #e5e7eb}
+    .hero h1{font-family:"Rampart One", system-ui; font-size:44px; margin-bottom:10px}
+    .hero .lead{color:#475569}
+    .h_title{font-weight:700;margin-top:2rem}
+    .speech-bubble{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:18px}
+    /* 地図 */
+    .map{width:100%;height:320px;border:0;border-radius:12px}
+    /* 流水っぽいオーバーレイ（カルーセル） */
+    .somen-flow .carousel-inner{overflow:hidden;border-radius:14px}
+    .somen-flow .carousel-item img{object-fit:cover;height:240px;border-radius:14px}
+    .somen-flow{position:relative}
+    .somen-flow::before{
+      content:""; position:absolute; inset:0;
+      background:repeating-linear-gradient(120deg, rgba(255,255,255,0.14) 0 8px, rgba(255,255,255,0) 8px 24px);
+      animation:flow 8s linear infinite; pointer-events:none;
+    }
+    @keyframes flow{ from{transform:translateX(-20%)} to{transform:translateX(20%)} }
+    footer.site-footer{border-top:1px solid #e5e7eb;background:#fff;margin-top:32px}
+  </style>
 </head>
 <body>
 
@@ -29,7 +50,7 @@
     <div class="container d-flex justify-content-between align-items-center py-2">
       <!-- 左上ロゴ -->
       <a href="#" class="d-flex align-items-center">
-        <img src="img/logo.png" alt="ムナカタソーメン ロゴ" class="brand-logo" style="height:40px;" />
+        <img src="img/logo.png" alt="ムナカタソーメン ロゴ" class="brand-logo" />
       </a>
 
       <!-- 右ナビ -->
@@ -51,13 +72,121 @@
     </div>
   </section>
 
-  <!-- 申込 -->
-  <section class="card p-3 mb-4" id="rsvp">
-    <h2 class="h_title">参加申込</h2>
-    <p>人数把握のため、できれば <strong>9/10（水）</strong> までにお申込みください。</p>
-    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeCvIVopmhXU3cMmv29TbRTv0u48kBtQNHB72cH6tTpp6EtNg/viewform" target="_blank" rel="noopener">Googleフォームを開く</a>
-    <p class="note mt-2">LINEで直接連絡でもOK。アレルギーがある場合は備考欄にご記入ください。</p>
-  </section>
+  <!-- メイン -->
+  <main class="container mt-4">
+    <!-- 冒頭メッセージ -->
+    <section id="overview" class="card p-3 mb-4">
+      <p>
+        アツい夏も終わりに差し掛かっていますが、いまだ暑い！<br>
+        今年流し残したことはないですか？<br>
+        みんなでそうめんと一緒に夏の暑さをさっぱり流しませんか？
+      </p>
+    </section>
+
+    <!-- 雰囲気（カルーセル） -->
+    <section class="card p-3 mb-4">
+      <h2 class="h_title">雰囲気</h2>
+      <div id="carouselRightIndicators" class="carousel slide somen-flow" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img src="img/somen1.jpg" class="d-block w-100" alt="流しそうめんの様子1"></div>
+          <div class="carousel-item"><img src="img/somen2.jpg" class="d-block w-100" alt="流しそうめんの様子2"></div>
+          <div class="carousel-item"><img src="img/somen3.jpg" class="d-block w-100" alt="流しそうめんの様子3"></div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselRightIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">前へ</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselRightIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">次へ</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 何をするの？ -->
+    <section class="card p-3 mb-4">
+      <h2 class="h_title">何をするの？</h2>
+      <p>庭に設置した20mの竹のレーンで流しそうめん！大人も子どもも一緒に楽しめます。</p>
+      <div class="text-center">
+        <img src="img/map.png" alt="会場のイメージ図（ダミー）" class="img-fluid" />
+      </div>
+      <p class="note mt-2">※画像はイメージ。実際の設置は当日の状況により変わる場合があります。</p>
+    </section>
+
+    <!-- 詳細 -->
+    <section class="card p-3 mb-4" id="detail">
+      <h2 class="h_title">イベント詳細</h2>
+      <ul style="padding-left:1.5rem;margin:0;">
+        <li>イベント名：流しそうめん大会 2025</li>
+        <li style="font-weight:bold;">開催日：2025年9月13日（土） 17:00–20:00（目安）</li>
+        <li>会場：Munazo House（本町1丁目）※詳細住所は参加者に個別連絡</li>
+        <li>対象：家族・友人・近所の方など自由参加（キッズ歓迎）</li>
+        <li>持ち物：お椀・箸、飲み物（各自）／差し入れ歓迎（薬味・果物など）</li>
+        <li>駐車場：なし</li>
+      </ul>
+
+      <h3 class="h_title mt-4">当日の流れ（目安）</h3>
+      <ol class="timeline">
+        <li><span>15:30</span> 設営開始（手伝える人だけ集合）</li>
+        <li><span>17:00</span> スタート！流し始め</li>
+        <li><span>20:00</span> 片付け・解散</li>
+      </ol>
+
+      <div class="row mt-3">
+        <div class="col-md-4">
+          <div class="card p-3">
+            <h5>持ち物</h5>
+            <ul>
+              <li>お椀・箸</li>
+              <li>飲み物（各自）</li>
+              <li>タオル／着替え（濡れたら）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 mt-3 mt-md-0">
+          <div class="card p-3">
+            <h5>こちらで用意するもの</h5>
+            <ul>
+              <li>そうめん・つゆ・竹スライダー／水路</li>
+              <li>薬味（ねぎ・生姜・大葉など）</li>
+              <li>紙皿・割り箸（予備）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 mt-3 mt-md-0">
+          <div class="card p-3">
+            <h5>注意・お願い</h5>
+            <ul>
+              <li>部屋の中から庭までを直線の竹で通します。</li>
+              <li>部屋の中で水がこぼれてしまった場合</li>
+              <li>私が嫁に叱られることになります。</li>
+              <li>ご理解とご協力をお願いいたします。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- アクセス -->
+    <section id="access" class="card p-3 mb-4">
+      <h2 class="h_title">アクセス</h2>
+      <p>会場は <strong>Munakata House（前橋市内）</strong> です。<br>
+        <span class="note">※詳細住所は申込者にのみ個別連絡いたします。</span>
+      </p>
+      <iframe class="map" loading="lazy" allowfullscreen
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3211.8605401022974!2d139.06634207650606!3d36.388369972367286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601ef31dabb27db7%3A0x6f15dc477218a1fb!2z44CSMzcxLTAwMjMg576k6aas55yM5YmN5qmL5biC5pys55S677yR5LiB55uu77yS77yQ4oiS77yS!5e0!3m2!1sja!2sjp!4v1756713164850!5m2!1sja!2sjp">
+      </iframe>
+      <p class="note">※Googleマップ上のピンは会場のざっくりとした目安です。</p>
+    </section>
+
+    <!-- 申込 -->
+    <section class="card p-3 mb-4" id="rsvp">
+      <h2 class="h_title">参加申込</h2>
+      <p>人数把握のため、できれば <strong>9/10（水）</strong> までにお申込みください。</p>
+      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeCvIVopmhXU3cMmv29TbRTv0u48kBtQNHB72cH6tTpp6EtNg/viewform" target="_blank" rel="noopener">Googleフォームを開く</a>
+      <p class="note mt-2">LINEで直接連絡でもOK。アレルギーがある場合は備考欄にご記入ください。</p>
+    </section>
+  </main>
 
   <!-- フッター -->
   <footer class="site-footer">
@@ -66,5 +195,8 @@
     </div>
   </footer>
 
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
