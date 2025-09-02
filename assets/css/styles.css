@@ -65,3 +65,8 @@ a{color:var(--pri);text-decoration:none} a:hover{text-decoration:underline}
   top: 0;
   z-index: 100;
 }
+.hero {
+  background: url("img/imgwater-hero.png") center/cover no-repeat;
+  padding: 72px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
