@@ -153,3 +153,20 @@ header.site-header .brand-logo{ height:40px; }
   .hero h1{ font-size:26px; }
   .nav .btn{ font-size:13px; padding:.35rem .6rem; }
 }
+/* ヒーローテキストの見やすさ改善 */
+.hero h1 {
+  font-family: "Rampart One", system-ui;
+  font-size: 44px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: #fff;                  /* 白文字 */
+  font-weight: 900;             /* 太字 */
+  text-shadow: 0 0 6px rgba(0,0,0,0.7), 0 0 12px rgba(0,0,0,0.5); /* 影で背景と分離 */
+}
+
+.hero .lead {
+  color: #fff;                  /* 白文字 */
+  font-weight: 600;             /* 少し太字 */
+  font-size: 18px;
+  text-shadow: 0 0 5px rgba(0,0,0,0.6); /* 影で読みやすく */
+}
