@@ -175,3 +175,6 @@ header.site-header .brand-logo{ height:40px; }
   font-weight: 600; /* 文字を少し太くして見やすく */
   text-shadow: 0 1px 3px rgba(0,0,0,0.6); /* 背景と重なっても視認性アップ */
 }
+.brand-logo {
+  height: 120px; /* 必要に応じて調整 */
+}
