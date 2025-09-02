@@ -103,3 +103,53 @@ header.site-header .brand-logo{ filter: drop-shadow(0 1px 2px rgba(0,0,0,.5)); }
   height: 100%;
   object-fit: cover;  /* 中央を切り抜いてバランスをとる */
 }
+/* ====== モバイル最適化・見やすさ調整 ====== */
+
+/* ヒーロー動画を背景にフィット */
+.hero{ position:relative; padding:72px 0; overflow:hidden; color:#fff; }
+.hero-video{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; z-index:0;
+}
+/* 文字の可読性を上げるオーバーレイ */
+.hero::after{
+  content:""; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.35));
+}
+.hero-content{ position:relative; z-index:2; }
+.hero h1{ font-family:"Rampart One", system-ui; font-size:44px; line-height:1.2; margin-bottom:10px; text-shadow:0 2px 8px rgba(0,0,0,.35); }
+.hero .lead{ color:#e2e8f0; text-shadow:0 1px 4px rgba(0,0,0,.3); }
+
+/* ヘッダーのロゴ&ナビ */
+header.site-header .brand-logo{ height:40px; }
+.nav{ display:flex; flex-wrap:wrap; gap:.5rem; }
+.nav .btn{ padding:.45rem .7rem; }
+
+/* 画像ギャラリー：正方形で統一 */
+.somen-img-wrapper{
+  aspect-ratio:1/1; overflow:hidden; border-radius:8px; background:#f8fafc;
+}
+.somen-img-wrapper img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+
+/* 地図の高さ・カードの余白調整 */
+.map{ width:100%; height:320px; border:0; border-radius:12px; }
+.card{ border-radius:14px; }
+
+/* 768px以下（スマホ）での最適化 */
+@media (max-width: 768px){
+  .hero{ padding:56px 0; }
+  .hero h1{ font-size:30px; }
+  .hero .lead{ font-size:14px; }
+  header.site-header .brand-logo{ height:32px; }
+  .map{ height:240px; }
+  .card.p-3{ padding:1rem !important; }
+}
+
+/* 390px以下（小さめスマホ）でさらに調整 */
+@media (max-width: 390px){
+  .hero{ padding:46px 0; }
+  .hero h1{ font-size:26px; }
+  .nav .btn{ font-size:13px; padding:.35rem .6rem; }
+}
